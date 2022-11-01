@@ -5,3 +5,4 @@ Project based in [Section 2](https://www.udemy.com/course/flutter-bloc-essential
 ## Libraries & Dependencies
 
 1. [Flutter BLoC](https://pub.dev/packages/flutter_bloc)
+2. [Equatable](https://pub.dev/packages/equatable)
