@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: BlocListener<CounterCubit, CounterState>(
+      body: BlocConsumer<CounterCubit, CounterState>(
         listener: (context, state) {
           if (state.counter == 5) {
             showDialog(
@@ -35,13 +35,11 @@ class MyHomePage extends StatelessWidget {
             );
           }
         },
-        child: BlocBuilder<CounterCubit, CounterState>(
-          builder: (_, state) => Center(
-            child: Text(
-              '${state.counter}',
-              style: const TextStyle(
-                fontSize: 52.0,
-              ),
+        builder: (_, state) => Center(
+          child: Text(
+            '${state.counter}',
+            style: const TextStyle(
+              fontSize: 52.0,
             ),
           ),
         ),
