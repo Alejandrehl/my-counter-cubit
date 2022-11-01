@@ -35,21 +35,22 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counterCubit = BlocProvider.of<CounterCubit>(
-      context,
-      listen: true,
-    );
+    final counterCubit = BlocProvider.of<CounterCubit>(context);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
       ),
       body: Center(
-        child: Text(
-          '${counterCubit.state.counter}',
-          style: const TextStyle(
-            fontSize: 52.0,
-          ),
+        child: BlocBuilder<CounterCubit, CounterState>(
+          builder: (context, state) {
+            return Text(
+              '${state.counter}',
+              style: const TextStyle(
+                fontSize: 52.0,
+              ),
+            );
+          },
         ),
       ),
       floatingActionButton: Row(
